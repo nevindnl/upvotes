@@ -1,16 +1,3 @@
-# In a subrange of length n, the total number of subranges within it is
-# the nth triangular number. Also, the number of subranges lost when an
-# element is removed from it is n, and the number of subranges gained
-# when an element is added to it is n+1.
-
-# I realized then that I could iterate through the list of prices while
-# updating a queue of subrange lengths and, in turn, a running difference
-# in constant time. Increasing subranges had positive lengths. Decreasing
-# subranges had negative lengths. And consecutive identical values were
-# represented by 0.
-
-# The solution is O(n) time and O(k) space.
-
 from collections import deque
 def solution(filename):
     f = open(filename, 'r')
