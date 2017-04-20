@@ -18,7 +18,7 @@ def solution(filename):
         window_size += 1
         if window_size == k:
             print(difference)
-            difference -= non_decreasing_subranges[-1] - non_increasing_subranges[-1]
+            difference -= non_decreasing_subranges[0] - non_increasing_subranges[0]
             dequeue(non_decreasing_subranges)
             dequeue(non_increasing_subranges)
             print(non_decreasing_subranges, non_increasing_subranges, difference)
