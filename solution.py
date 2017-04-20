@@ -14,14 +14,12 @@ def solution(filename):
         enqueue(non_decreasing_subranges, upvotes[i] >= upvotes[i - 1])
         enqueue(non_increasing_subranges, upvotes[i] <= upvotes[i - 1])
         difference += non_decreasing_subranges[-1] - non_increasing_subranges[-1]
-        print(non_decreasing_subranges, non_increasing_subranges, difference)
         window_size += 1
         if window_size == k:
             print(difference)
             difference -= non_decreasing_subranges[0] - non_increasing_subranges[0]
             dequeue(non_decreasing_subranges)
             dequeue(non_increasing_subranges)
-            print(non_decreasing_subranges, non_increasing_subranges, difference)
             window_size -= 1
 
 def dequeue(subranges):
