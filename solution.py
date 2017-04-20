@@ -1,9 +1,12 @@
+import sys
+import string
 from collections import deque
-def solution(filename):
-    f = open(filename, 'r')
-    text = f.readlines()
-    n, k = map(lambda x: int(x), text[0].split())
-    upvotes = map(lambda x: int(x), text[1].split())
+def solution():
+    stream = sys.stdin
+    line = stream.readline().rstrip("\n")
+    n, k = map(lambda x: int(x), line.split())
+    line = stream.readline().rstrip("\n")
+    upvotes = map(lambda x: int(x), line.split())
     window_size = 1
     non_decreasing_subranges = deque([])
     non_increasing_subranges = deque([])
@@ -37,4 +40,4 @@ def enqueue(subranges, cmp):
     else:
         subranges.append(0)
 
-solution('input.txt')
+solution()
