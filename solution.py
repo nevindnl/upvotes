@@ -10,7 +10,7 @@ def solution():
     non_decreasing_subranges = deque([])
     non_increasing_subranges = deque([])
     difference = 0
-    for i in range(n):
+    for i in xrange(n):
         if i == 0:
             continue
         enqueue(non_decreasing_subranges, upvotes[i] >= upvotes[i - 1])
