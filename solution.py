@@ -14,9 +14,7 @@ def solve(n, k, upvotes):
     non_decreasing_subranges = deque([])
     non_increasing_subranges = deque([])
     difference = 0
-    for i in xrange(n):
-        if i == 0:
-            continue
+    for i in xrange(1, n):
         enqueue(non_decreasing_subranges, upvotes[i] >= upvotes[i - 1])
         enqueue(non_increasing_subranges, upvotes[i] <= upvotes[i - 1])
         difference += non_decreasing_subranges[-1] - non_increasing_subranges[-1]
