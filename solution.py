@@ -1,11 +1,15 @@
 import sys
 from collections import deque
-def solution():
+
+def read_input():
     stream = sys.stdin
     line = stream.readline().rstrip("\n")
     n, k = map(lambda x: int(x), line.split())
     line = stream.readline().rstrip("\n")
     upvotes = map(lambda x: int(x), line.split())
+    return (n, k, upvotes)
+
+def solve(n, k, upvotes):
     window_size = 1
     non_decreasing_subranges = deque([])
     non_increasing_subranges = deque([])
@@ -38,5 +42,9 @@ def enqueue(subranges, cmp):
             subranges[-1] += 1
     else:
         subranges.append(0)
+
+def solution():
+    n, k, upvotes = read_input()
+    solve(n, k, upvotes)
 
 solution()
